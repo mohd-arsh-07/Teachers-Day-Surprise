@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>A Special Celebration</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Outfit:wght@300;500;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <button id="audio-toggle" aria-label="Toggle Celebration Music">
+        🔊 <span class="audio-text">MUSIC</span>
+    </button>
+    <audio id="bg-music" loop>
+        <source src="assets/optional-celebration.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="effects-container"></div>
+
+    <section id="phase-mystery" class="fullscreen-section active">
+        <div class="background-layers">
+            <div class="gradient-blob blob-1"></div>
+            <div class="gradient-blob blob-2"></div>
+        </div>
+        
+        <div class="mystery-content">
+            <div class="glowing-orb">
+                <span class="orb-icon">✨</span>
+            </div>
+            <p class="mystery-text-small reveal-text delay-1">SOMETHING SPECIAL</p>
+            <h1 class="mystery-text-large reveal-text delay-2">HAS BEEN PREPARED<br>JUST FOR YOU</h1>
+            
+            <button id="unlock-btn" class="glow-button reveal-text delay-3">
+                <span class="btn-content">🎁 TAP TO UNLOCK YOUR SURPRISE</span>
+                <div class="btn-particles"></div>
+            </button>
+            <p class="hint-text reveal-text delay-4">✨ Your celebration is waiting...</p>
+        </div>
+    </section>
+
+    <section id="phase-countdown" class="fullscreen-section hidden">
+        <div id="countdown-number" class="massive-number">3</div>
+    </section>
+
+    <main id="main-journey" class="hidden">
+        
+        <section id="grand-reveal" class="journey-section">
+            <div class="animated-typography">
+                <span class="word block-word word-1">HAPPY</span>
+                <span class="word block-word word-2">TEACHER'S</span>
+                <span class="word block-word word-3">DAY!</span>
+            </div>
+        </section>
+
+        <section id="personal-reveal" class="journey-section">
+            <p class="suspense-text scroll-reveal">WAIT...</p>
+            <p class="suspense-text small scroll-reveal">THIS CELEBRATION WAS CREATED ESPECIALLY FOR...</p>
+            
+            <div class="teacher-display scroll-reveal">
+                <div class="premium-frame">
+                    <div class="frame-border"></div>
+                    <div class="frame-glow"></div>
+                    <div id="teacher-photo-container"></div>
+                </div>
+                <h2 id="teacher-name" class="neon-name"></h2>
+            </div>
+        </section>
+
+        <section id="gratitude-cards" class="journey-section">
+            <h3 class="section-title scroll-reveal">WHAT MAKES A GREAT TEACHER?</h3>
+            <div class="cards-container">
+                
+                <div class="interactive-card scroll-reveal">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="card-icon">📚</span>
+                            <p class="card-subtitle">YOU SHARED</p>
+                            <h4 class="card-title">KNOWLEDGE</h4>
+                        </div>
+                        <div class="card-back">
+                            <p>Because of your guidance, learning became more than just completing a syllabus.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-card scroll-reveal delay-card-1">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="card-icon">💪</span>
+                            <p class="card-subtitle">YOU BUILT</p>
+                            <h4 class="card-title">CONFIDENCE</h4>
+                        </div>
+                        <div class="card-back">
+                            <p>You showed us our own potential, even when we couldn't see it ourselves.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interactive-card scroll-reveal delay-card-2">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <span class="card-icon">🚀</span>
+                            <p class="card-subtitle">YOU INSPIRED US TO</p>
+                            <h4 class="card-title">DREAM BIGGER</h4>
+                        </div>
+                        <div class="card-back">
+                            <p>Your passion for teaching became our motivation to achieve greatness.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <p class="hint-text mt-2 scroll-reveal">(Tap the cards)</p>
+        </section>
+
+        <section id="personal-message" class="journey-section">
+            <div class="envelope-container scroll-reveal">
+                <h3 class="section-title">💌 ONE MESSAGE.<br>CREATED ESPECIALLY FOR YOU.</h3>
+                
+                <div class="envelope" id="message-envelope">
+                    <div class="flap"></div>
+                    <div class="letter">
+                        <p id="teacher-message" class="personal-text"></p>
+                        <p class="signature">WITH LOVE, RESPECT & GRATITUDE ❤️</p>
+                    </div>
+                    <div class="envelope-front"></div>
+                </div>
+
+                <button id="open-envelope-btn" class="glow-button outline mt-2">
+                    <span>OPEN YOUR MESSAGE</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="surprise-interaction" class="journey-section">
+            <h3 class="section-title scroll-reveal">🎰 ONE LAST SURPRISE!</h3>
+            <p class="mystery-text-small scroll-reveal">Tap the button and discover something special.</p>
+            
+            <div class="shuffle-deck scroll-reveal" id="shuffle-deck">
+                <div class="shuffle-card" style="--i: 0;">✨</div>
+                <div class="shuffle-card" style="--i: 1;">🌟</div>
+                <div class="shuffle-card" style="--i: 2;">🎉</div>
+                <div class="shuffle-card winning-card" style="--i: 3;">
+                    <p>"A great teacher doesn't just explain lessons.<br>They become part of the story we remember."</p>
+                </div>
+            </div>
+
+            <button id="shuffle-btn" class="glow-button mt-2 scroll-reveal">
+                <span>🎁 REVEAL MY SURPRISE</span>
+            </button>
+        </section>
+
+        <section id="memory-sky" class="journey-section">
+            <div class="sky-content scroll-reveal">
+                <p class="suspense-text small">Every student carries a small part of their teachers throughout life.</p>
+                <h3 class="section-title mt-2">YOUR GUIDANCE WILL ALWAYS SHINE</h3>
+                <p class="hint-text mt-2">(Tap the sky to leave a star)</p>
+            </div>
+            <div id="star-canvas"></div>
+        </section>
+
+        <section id="finale" class="journey-section">
+            <div class="finale-content scroll-reveal">
+                <h2 class="massive-gradient-text">HAPPY<br>TEACHER'S<br>DAY</h2>
+                <p class="finale-subtext mt-2">Some people teach subjects.</p>
+                <p class="finale-subtext highlight">Extraordinary teachers inspire lives.</p>
+                <h1 class="thank-you-text mt-2">THANK YOU</h1>
+                
+                <div class="final-signature mt-4">
+                    <p>CREATED WITH GRATITUDE, CREATIVITY & TECHNOLOGY</p>
+                    <p class="highlight">— From Mohd Arsh and His Team ❤️</p>
+                </div>
+                
+                <button id="finale-fireworks-btn" class="glow-button mt-2">
+                    <span>🎆 CELEBRATE ONE MORE TIME</span>
+                </button>
+            </div>
+            <div class="horizon-glow"></div>
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
