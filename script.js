@@ -184,6 +184,17 @@ function triggerGrandExplosion() {
    7. MYSTERY UNLOCK & COUNTDOWN SEQUENCE
 ============================================ */
 unlockBtn.addEventListener('click', () => {
+    // 🎵 CINEMATIC FEEL: Jaise hi Unlock dabega, Music start ho jayega!
+    const bgMusic = document.getElementById('bg-music');
+    const audioToggle = document.getElementById('audio-toggle');
+    const audioText = audioToggle.querySelector('.audio-text');
+    
+    bgMusic.play().then(() => {
+        isPlaying = true;
+        audioText.innerText = "MUSIC ON";
+        audioToggle.style.opacity = "1";
+    }).catch(err => console.log("Audio auto-play blocked by browser"));
+
     // Hide Phase 1
     phaseMystery.classList.remove('active');
     phaseMystery.classList.add('hidden');
